@@ -129,13 +129,11 @@ npm run build    # gera a versão estática para publicar (pasta dist)
 npm run preview  # visualiza a versão gerada pelo build
 ```
 
-## Publicar na internet (Vercel ou Netlify)
+## Publicar na internet
 
-O blog é um site estático. Você publica conectando o repositório do projeto a um serviço de hospedagem.
+O blog é um site estático. Você publica enviando alterações para o repositório Git; o serviço de hospedagem reconstrói o site.
 
 ### Valores de configuração (importante)
-
-Ao configurar o deploy, use:
 
 | Campo | Valor |
 |-------|--------|
@@ -143,7 +141,31 @@ Ao configurar o deploy, use:
 | Pasta de saída | `dist` |
 | Framework / preset | **Astro** (muitas vezes detectado automaticamente) |
 
-### Passos gerais
+### GitHub Pages (repositório `pachicodes/esquerda`)
+
+Este projeto já inclui o workflow `.github/workflows/deploy.yml`. Ele roda `npm ci`, `npm run build` e publica a pasta `dist`.
+
+**URL do site:** [https://pachicodes.github.io/esquerda/](https://pachicodes.github.io/esquerda/)
+
+**Configuração no GitHub (uma vez):**
+
+1. Abra o repositório no GitHub → **Settings** → **Pages**.
+2. Em **Build and deployment → Source**, escolha **GitHub Actions** (não use “Deploy from a branch” — isso tenta Jekyll e o build falha).
+3. Confirme que a branch padrão do repositório é `main`.
+4. Faça push para `main`. Acompanhe em **Actions**; os jobs `build` e `deploy` devem ficar verdes.
+
+**Depois de publicado:** para colocar um post novo no ar, adicione ou edite o `.md`, faça commit e push para `main`. O workflow atualiza o site automaticamente.
+
+**Preview local com o mesmo caminho do GitHub Pages:**
+
+```bash
+npm run build
+npm run preview
+```
+
+Abra no navegador o endereço que o terminal mostrar (inclui `/esquerda/` no caminho).
+
+### Vercel ou Netlify (alternativa)
 
 **Vercel**
 
@@ -159,8 +181,6 @@ Ao configurar o deploy, use:
 3. Build command: `npm run build`. Publish directory: `dist`.
 4. Deploy. Novos commits podem disparar nova publicação.
 
-Depois de publicado, para colocar um post novo no ar: adicione ou edite o arquivo `.md`, faça commit e envie para o repositório. O serviço de hospedagem reconstrói o site.
-
 ## Erros comuns e o que fazer
 
 | Problema | Causa provável | O que fazer |
@@ -173,6 +193,9 @@ Depois de publicado, para colocar um post novo no ar: adicione ou edite o arquiv
 | Acentos no nome do arquivo | Slug inconsistente | Prefira só letras sem acento no nome do arquivo |
 | Título quebrado no frontmatter | Aspas faltando | Coloque o título entre aspas: `title: "Meu título"` |
 | Alteração não aparece no navegador | Cache ou servidor antigo | Salve o arquivo, reinicie `npm run dev` se necessário, atualize a página com Ctrl+F5 |
+| GitHub Pages com erro de Jekyll | Source em “Deploy from a branch” | Troque para **GitHub Actions** em Settings → Pages |
+| Site no ar sem CSS / links quebrados | `base` incorreto no Astro | Mantenha `base: '/esquerda/'` em `astro.config.mjs` para este repositório |
+| Workflow falha no `npm ci` | Falta `package-lock.json` no repositório | Rode `npm install` localmente e commite o `package-lock.json` |
 
 ## Editar ou remover um post
 

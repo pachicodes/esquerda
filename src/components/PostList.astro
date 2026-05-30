@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import PostCard from './PostCard.astro';
 import CategoryFilter from './CategoryFilter.astro';
+import { withBase } from '../lib/paths';
 
 interface Props {
   posts: CollectionEntry<'posts'>[];
@@ -25,7 +26,7 @@ const {
       <li data-category={post.data.category}>
         <PostCard
           title={post.data.title}
-          href={`/posts/${post.id}`}
+              href={withBase(`posts/${post.id}`)}
           date={post.data.date}
           category={post.data.category}
           description={post.data.description}

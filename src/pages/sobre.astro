@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/paths';
 
 const title = 'Sobre';
 const description =
@@ -56,6 +57,6 @@ const description =
   </section>
 
   <p class="post-back">
-    <a href="/">← Voltar para a página inicial</a>
+    <a href={withBase()}>← Voltar para a página inicial</a>
   </p>
 </BaseLayout>

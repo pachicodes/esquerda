@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { withBase } from '../lib/paths';
 
 interface Props {
   title: string;
@@ -36,14 +37,14 @@ const pageTitle = title.includes('Leitura do Mundo')
     <header class="site-header">
       <div class="site-header__inner">
         <p class="site-title">
-          <a href="/">Leitura do Mundo</a>
+          <a href={withBase()}>Leitura do Mundo</a>
         </p>
         <div class="site-header__actions">
           <nav aria-label="Principal">
             <ul class="site-nav">
-              <li><a href="/">Início</a></li>
-              <li><a href="/textos">Textos</a></li>
-              <li><a href="/sobre">Sobre</a></li>
+              <li><a href={withBase()}>Início</a></li>
+              <li><a href={withBase('textos')}>Textos</a></li>
+              <li><a href={withBase('sobre')}>Sobre</a></li>
             </ul>
           </nav>
           <button

@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostList from '../components/PostList.astro';
 import { getPublishedPosts } from '../lib/posts';
+import { withBase } from '../lib/paths';
 
 const title = 'Leitura do Mundo';
 const description =
@@ -23,7 +24,7 @@ const recentPosts = posts.slice(0, 5);
       tecnologia são explicados com clareza e sem condescendência.
     </p>
     <p>
-      <a href="/sobre">Sobre o blog</a>
+      <a href={withBase('sobre')}>Sobre o blog</a>
     </p>
   </header>
 
@@ -32,7 +33,7 @@ const recentPosts = posts.slice(0, 5);
     <PostList posts={recentPosts} />
     {posts.length > 0 && (
       <p class="home-posts__more">
-        <a href="/textos">Ver todos os textos</a>
+        <a href={withBase('textos')}>Ver todos os textos</a>
       </p>
     )}
   </section>
@@ -43,7 +44,7 @@ const recentPosts = posts.slice(0, 5);
       <cite>Paulo Freire</cite>
     </blockquote>
     <p class="epigraph__note">
-      O nome deste blog nasce dessa ideia. <a href="/sobre">Conheça a origem</a>.
+      O nome deste blog nasce dessa ideia. <a href={withBase('sobre')}>Conheça a origem</a>.
     </p>
   </aside>
 </BaseLayout>

@@ -492,3 +492,38 @@ Implementadas após a conclusão das fases 0–9:
 | Refatoração | `src/lib/posts.ts`, `src/lib/dates.ts`, `src/data/categories.ts`, componente `PostList.astro` |
 
 Arquivos removidos por obsolescência: `FASE-1-PREPARACAO.md`, plano inicial em `.cursor/plans/`.
+
+## Fase 11 — Deploy no GitHub Pages
+
+### Objetivo
+
+Publicar o blog em GitHub Pages com build Astro via GitHub Actions, evitando o build Jekyll do modo “Deploy from a branch”.
+
+### Escopo
+
+- Criar `.github/workflows/deploy.yml` (build + `deploy-pages`).
+- Configurar `site` e `base: '/esquerda/'` em `astro.config.mjs`.
+- Documentar GitHub Pages em `README.md` e `COMO_ADICIONAR_POSTS.md`.
+- Garantir `package-lock.json` versionado para `npm ci` na Action.
+
+### Critérios de Aceite
+
+- Workflow dispara em push na branch `main`.
+- Build gera `dist/` com caminhos prefixados por `/esquerda/`.
+- Documentação explica Source = **GitHub Actions** (não “Deploy from a branch”).
+- Build local (`npm ci`, `npm run build`) passa com a nova configuração.
+
+### Validação
+
+- `npm ci` e `npm run build` localmente.
+- Após push: jobs `build` e `deploy` verdes em Actions.
+- Site acessível em `https://pachicodes.github.io/esquerda/`.
+
+### Status: concluída (2026-05-30)
+
+- **Arquivos criados:** `.github/workflows/deploy.yml`.
+- **Arquivos alterados:** `astro.config.mjs`, `README.md`, `COMO_ADICIONAR_POSTS.md`, links internos via `src/lib/paths.ts` (`withBase`).
+- **Config Astro:** `site: 'https://pachicodes.github.io'`, `base: '/esquerda/'`.
+- **Validação local:** `npm ci` e `npm run build` concluídos sem erro; assets no HTML com prefixo `/esquerda/`.
+- **Validação remota:** pendente de push para `main` e confirmação em Actions (Settings → Pages → GitHub Actions).
+- **Próximo passo:** push para `main`; conferir URL publicada no GitHub.

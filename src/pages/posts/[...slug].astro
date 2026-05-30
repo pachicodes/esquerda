@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { formatPostDate, postDateIso } from '../../lib/dates';
+import { withBase } from '../../lib/paths';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts', ({ data }) => data.published);
@@ -38,6 +39,6 @@ const dateIso = postDateIso(post.data.date);
   </article>
 
   <p class="post-back">
-    <a href="/">← Voltar para a página inicial</a>
+    <a href={withBase()}>← Voltar para a página inicial</a>
   </p>
 </BaseLayout>
