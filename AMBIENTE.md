@@ -1,28 +1,18 @@
-# Ambiente e Validação — Fase 0
+# Ambiente e Validação
 
-Este documento registra o estado do ambiente de desenvolvimento e a estratégia de validação adotada para o projeto **Leitura do Mundo**.
+Este documento registra o estado do ambiente de desenvolvimento para o projeto **Leitura do Mundo**.
 
-## Verificação realizada em 2026-05-30
+## Verificação em 2026-05-30
 
 | Ferramenta | Disponível | Observação |
 |------------|------------|------------|
-| `node`     | Parcial    | Apenas o helper interno do Cursor (`node.exe` em `AppData\Local\Programs\cursor\...`). **Não** é uma instalação completa de Node.js para desenvolvimento. |
-| `npm`      | Não        | Comando não encontrado no PATH. |
-| `npx`      | Não        | Comando não encontrado no PATH. |
+| `node`   | Sim        | Node.js instalado em `C:\Program Files\nodejs` |
+| `npm`    | Sim        | Disponível no PATH após configurar o ambiente |
+| `npx`    | Sim        | Incluído com a instalação do Node.js |
 
-## Decisão: validação manual
+## Validação do projeto
 
-Como `npm` e `npx` não estão disponíveis neste ambiente:
-
-- A implementação das fases 1 a 8 **pode continuar** com criação manual dos arquivos do projeto.
-- A validação completa (`npm install`, `npm run build`, `npm run preview`) **fica pendente** até instalar Node.js 18+ com npm incluído.
-- Erros de schema, imports e build do Astro só serão detectados automaticamente depois que npm estiver disponível.
-
-## Requisito para validação completa
-
-Instalar **Node.js 18 ou superior** (recomendado: versão LTS atual) a partir de [https://nodejs.org](https://nodejs.org).
-
-Após instalar, na pasta do projeto:
+Na pasta do projeto:
 
 ```bash
 npm install
@@ -38,17 +28,12 @@ npm run preview
 
 ## `package-lock.json`
 
-- **Não** criar `package-lock.json` manualmente nesta execução.
-- O arquivo será gerado automaticamente na primeira vez que `npm install` for executado com npm disponível.
+Gerado automaticamente por `npm install`. Não editar manualmente.
 
 ## Falso positivo de Node.js
 
-Se `node --version` retornar uma versão (por exemplo `v22.x`), isso **não** significa que o ambiente está pronto para desenvolvimento. Verifique se `npm --version` também funciona antes de considerar o ambiente completo.
+Se `node --version` funcionar mas `npm --version` falhar, o ambiente **não** está completo. O helper interno do Cursor não substitui uma instalação real de Node.js para desenvolvimento.
 
-## Verificação final (Fase 9 — 2026-05-30)
+## Última validação de build
 
-A auditoria da primeira versão foi concluída com **revisão manual**. O projeto está estruturalmente pronto para deploy estático; a confirmação automática (`npm install`, `npm run build`) depende de instalar Node.js 18+ com npm no PATH.
-
-## Próximo passo
-
-Instalar Node.js, rodar `npm install` e `npm run build` na pasta do projeto e publicar conforme [COMO_ADICIONAR_POSTS.md](COMO_ADICIONAR_POSTS.md).
+Em 2026-05-30, `npm run build` concluiu com sucesso (6 páginas estáticas geradas em `dist/`).

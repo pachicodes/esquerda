@@ -15,7 +15,7 @@ O projeto deve evitar backend, banco de dados, autenticação, CMS obrigatório,
 - Usar posts em Markdown dentro de `src/content/posts/`.
 - Todos os posts devem ficar exclusivamente em `src/content/posts/`.
 - Usar CSS simples, sem framework visual.
-- Usar filtro de categoria na página inicial com JavaScript simples, sem React.
+- Usar filtro de categoria na página `/textos` com JavaScript simples, sem React.
 - O script do filtro ficará dentro de `CategoryFilter.astro`, por ser pequeno e localizado.
 - Garantir que, sem JavaScript, todos os posts publicados continuem visíveis.
 - Usar `published: false` como mecanismo de rascunho.
@@ -37,7 +37,6 @@ O projeto deve evitar backend, banco de dados, autenticação, CMS obrigatório,
 - Comentários.
 - Newsletter.
 - Analytics.
-- Dark mode.
 - Página individual de categoria.
 - Tags além de categoria.
 - Compartilhamento social avançado.
@@ -45,7 +44,7 @@ O projeto deve evitar backend, banco de dados, autenticação, CMS obrigatório,
 
 ## Riscos e Cuidados
 
-- **Node.js/npm não disponível no ambiente atual:** os arquivos podem ser criados, mas a validação com `npm install` e `npm run build` depende de instalar Node.js 18+.
+- **Node.js/npm:** manter Node.js 18+ no PATH para validação local (`npm install`, `npm run build`).
 - **Validação parcial:** se Node/npm não estiver disponível, a revisão será manual e o build precisará ser executado depois.
 - **Complexidade desnecessária:** evitar abstrações, dependências e funcionalidades que dificultem a manutenção.
 - **Filtro por categoria:** deve continuar simples. Não criar páginas separadas de categoria nesta versão.
@@ -88,7 +87,7 @@ Definir claramente se o projeto será validado com Node/npm agora ou se a implem
 - **Modo de validação:** manual até instalar Node.js 18+ com npm.
 - **npm / npx:** indisponíveis no ambiente atual.
 - **`package-lock.json`:** não criado; será gerado na primeira execução de `npm install`.
-- **Registros:** [AMBIENTE.md](AMBIENTE.md), [README.md](README.md), [FASE-1-PREPARACAO.md](FASE-1-PREPARACAO.md).
+- **Registros:** [AMBIENTE.md](AMBIENTE.md), [README.md](README.md).
 - **Próxima fase:** Fase 1 — criar arquivos Astro manualmente (sem `npm create astro`).
 
 ## Fase 1 — Base Mínima do Projeto Astro
@@ -473,9 +472,23 @@ npm run preview
 O projeto estará pronto quando:
 
 - O blog puder ser mantido principalmente editando arquivos Markdown.
-- A página inicial listar posts publicados e filtrar por categoria.
+- A página inicial mostrar os textos recentes; a página `/textos` listar todos e filtrar por categoria.
 - Cada post publicado tiver página própria.
 - Posts com `published: false` não aparecerem na home, no filtro ou como páginas públicas.
 - A página Sobre existir.
 - A documentação explicar manutenção e publicação em português simples.
 - O código permanecer simples, estático e sem dependências desnecessárias.
+
+## Melhorias pós-v1 (2026-05-30)
+
+Implementadas após a conclusão das fases 0–9:
+
+| Melhoria | Resumo |
+|----------|--------|
+| Página `/textos` | Lista completa com filtro por categoria; home com até 5 textos recentes |
+| Nome do blog | **Leitura do Mundo** (antes: O Direito de Entender) |
+| Menção a Freire | Epígrafe na home e seção “De onde vem o nome” em `/sobre` |
+| Dark mode | Segue o sistema; botão para forçar claro/escuro com memória em `localStorage` |
+| Refatoração | `src/lib/posts.ts`, `src/lib/dates.ts`, `src/data/categories.ts`, componente `PostList.astro` |
+
+Arquivos removidos por obsolescência: `FASE-1-PREPARACAO.md`, plano inicial em `.cursor/plans/`.

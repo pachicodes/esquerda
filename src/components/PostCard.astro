@@ -1,4 +1,6 @@
 ---
+import { formatPostDate, postDateIso } from '../lib/dates';
+
 interface Props {
   title: string;
   href: string;
@@ -10,8 +12,8 @@ interface Props {
 
 const { title, href, date, category, description, readingTime } = Astro.props;
 
-const dateFormatted = date.toLocaleDateString('pt-BR', { dateStyle: 'long' });
-const dateIso = date.toISOString().slice(0, 10);
+const dateFormatted = formatPostDate(date);
+const dateIso = postDateIso(date);
 ---
 
 <article class="post-card">

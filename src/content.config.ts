@@ -1,14 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
-
-const categories = [
-  'Direito de Entender',
-  'Linguagem do Poder',
-  'Tecnologia não é Neutra',
-  'Esquerda para Gente Cansada',
-  'Vida Cotidiana e Política',
-] as const;
+import { categories } from './data/categories';
 
 const posts = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content/posts' }),

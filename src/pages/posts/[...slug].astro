@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatPostDate, postDateIso } from '../../lib/dates';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts', ({ data }) => data.published);
@@ -13,10 +14,8 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 
-const dateFormatted = post.data.date.toLocaleDateString('pt-BR', {
-  dateStyle: 'long',
-});
-const dateIso = post.data.date.toISOString().slice(0, 10);
+const dateFormatted = formatPostDate(post.data.date);
+const dateIso = postDateIso(post.data.date);
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description}>

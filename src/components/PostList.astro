@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import PostCard from './PostCard.astro';
+import CategoryFilter from './CategoryFilter.astro';
+
+interface Props {
+  posts: CollectionEntry<'posts'>[];
+  showFilter?: boolean;
+  emptyMessage?: string;
+}
+
+const {
+  posts,
+  showFilter = false,
+  emptyMessage = 'Nenhum texto publicado ainda.',
+} = Astro.props;
+---
+
+{posts.length > 0 && showFilter && <CategoryFilter />}
+{posts.length === 0 ? (
+  <p class="prose-muted">{emptyMessage}</p>
+) : (
+  <ul class="post-list">
+    {posts.map((post) => (
+      <li data-category={post.data.category}>
+        <PostCard
+          title={post.data.title}
+          href={`/posts/${post.id}`}
+          date={post.data.date}
+          category={post.data.category}
+          description={post.data.description}
+          readingTime={post.data.readingTime}
+        />
+      </li>
+    ))}
+  </ul>
+)}

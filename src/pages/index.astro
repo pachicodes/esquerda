@@ -1,7 +1,7 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PostCard from '../components/PostCard.astro';
+import PostList from '../components/PostList.astro';
+import { getPublishedPosts } from '../lib/posts';
 
 const title = 'Leitura do Mundo';
 const description =
@@ -9,9 +9,7 @@ const description =
 const tagline =
   'Textos sobre poder, linguagem, política e tecnologia para quem cansou de ser deixada do lado de fora da conversa.';
 
-const posts = (await getCollection('posts', ({ data }) => data.published)).sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime()
-);
+const posts = await getPublishedPosts();
 const recentPosts = posts.slice(0, 5);
 ---
 
@@ -31,24 +29,7 @@ const recentPosts = posts.slice(0, 5);
 
   <section class="home-posts" aria-labelledby="posts-heading">
     <h2 id="posts-heading">Últimos textos</h2>
-    {recentPosts.length === 0 ? (
-      <p class="prose-muted">Nenhum texto publicado ainda.</p>
-    ) : (
-      <ul class="post-list">
-        {recentPosts.map((post) => (
-          <li data-category={post.data.category}>
-            <PostCard
-              title={post.data.title}
-              href={`/posts/${post.id}`}
-              date={post.data.date}
-              category={post.data.category}
-              description={post.data.description}
-              readingTime={post.data.readingTime}
-            />
-          </li>
-        ))}
-      </ul>
-    )}
+    <PostList posts={recentPosts} />
     {posts.length > 0 && (
       <p class="home-posts__more">
         <a href="/textos">Ver todos os textos</a>
