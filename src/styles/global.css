@@ -186,6 +186,41 @@ p {
   font-size: 0.9375rem;
 }
 
+.home-epigraph {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.about-section {
+  margin-top: var(--space-lg);
+}
+
+.epigraph {
+  margin: 0;
+  padding-left: var(--space-sm);
+  border-left: 3px solid var(--color-accent-green);
+}
+
+.epigraph p {
+  margin: 0 0 var(--space-xs);
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--color-text);
+}
+
+.epigraph cite {
+  font-size: 0.875rem;
+  font-style: normal;
+  color: var(--color-text-muted);
+}
+
+.epigraph__note {
+  margin: var(--space-sm) 0 0;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
 .post-card {
   padding: var(--space-md) 0;
 }
