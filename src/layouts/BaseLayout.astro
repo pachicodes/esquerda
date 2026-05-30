@@ -19,6 +19,18 @@ const pageTitle = title.includes('Leitura do Mundo')
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    <script is:inline>
+      (function () {
+        var root = document.documentElement;
+        root.classList.add('js');
+        try {
+          var stored = localStorage.getItem('theme');
+          if (stored === 'dark' || stored === 'light') {
+            root.setAttribute('data-theme', stored);
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -26,13 +38,23 @@ const pageTitle = title.includes('Leitura do Mundo')
         <p class="site-title">
           <a href="/">Leitura do Mundo</a>
         </p>
-        <nav aria-label="Principal">
-          <ul class="site-nav">
-            <li><a href="/">Início</a></li>
-            <li><a href="/textos">Textos</a></li>
-            <li><a href="/sobre">Sobre</a></li>
-          </ul>
-        </nav>
+        <div class="site-header__actions">
+          <nav aria-label="Principal">
+            <ul class="site-nav">
+              <li><a href="/">Início</a></li>
+              <li><a href="/textos">Textos</a></li>
+              <li><a href="/sobre">Sobre</a></li>
+            </ul>
+          </nav>
+          <button
+            type="button"
+            class="theme-toggle"
+            data-theme-toggle
+            aria-pressed="false"
+          >
+            <span data-theme-label>Modo escuro</span>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -47,5 +69,34 @@ const pageTitle = title.includes('Leitura do Mundo')
         <p>Textos sobre poder, linguagem, política e tecnologia.</p>
       </div>
     </footer>
+    <script is:inline>
+      (function () {
+        var root = document.documentElement;
+        var btn = document.querySelector('[data-theme-toggle]');
+        if (!btn) return;
+        var label = btn.querySelector('[data-theme-label]');
+        var media = window.matchMedia('(prefers-color-scheme: dark)');
+        function effectiveTheme() {
+          var explicit = root.getAttribute('data-theme');
+          if (explicit === 'dark' || explicit === 'light') return explicit;
+          return media.matches ? 'dark' : 'light';
+        }
+        function sync() {
+          var isDark = effectiveTheme() === 'dark';
+          btn.setAttribute('aria-pressed', String(isDark));
+          if (label) label.textContent = isDark ? 'Modo claro' : 'Modo escuro';
+        }
+        btn.addEventListener('click', function () {
+          var next = effectiveTheme() === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', next);
+          try {
+            localStorage.setItem('theme', next);
+          } catch (e) {}
+          sync();
+        });
+        media.addEventListener('change', sync);
+        sync();
+      })();
+    </script>
   </body>
 </html>

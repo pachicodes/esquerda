@@ -1,6 +1,7 @@
 /* Leitura do Mundo — estilos globais */
 
 :root {
+  color-scheme: light;
   --color-bg: #f8f7f4;
   --color-text: #1a1a1a;
   --color-text-muted: #4a4a4a;
@@ -22,6 +23,36 @@
   --space-xl: 4rem;
 }
 
+/* Tema escuro escolhido explicitamente pela pessoa leitora */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #15171a;
+  --color-text: #e9e7e2;
+  --color-text-muted: #b3b0a8;
+  --color-accent-green: #9fb56e;
+  --color-accent-purple: #b9a8d2;
+  --color-link: #a8c06f;
+  --color-link-hover: #c9bce0;
+  --color-border: #2b2e33;
+  --color-focus: #9fb56e;
+}
+
+/* Segue a preferência do sistema, salvo quando a pessoa força o tema claro */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --color-bg: #15171a;
+    --color-text: #e9e7e2;
+    --color-text-muted: #b3b0a8;
+    --color-accent-green: #9fb56e;
+    --color-accent-purple: #b9a8d2;
+    --color-link: #a8c06f;
+    --color-link-hover: #c9bce0;
+    --color-border: #2b2e33;
+    --color-focus: #9fb56e;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -40,6 +71,7 @@ body {
   line-height: var(--line-height);
   color: var(--color-text);
   background-color: var(--color-bg);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 img {
@@ -109,6 +141,34 @@ button:focus-visible {
 
 .site-nav a:hover {
   color: var(--color-accent-purple);
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.theme-toggle {
+  display: none;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.js .theme-toggle {
+  display: inline-flex;
+}
+
+.theme-toggle:hover {
+  color: var(--color-accent-purple);
+  border-color: var(--color-accent-purple);
 }
 
 .site-main {
