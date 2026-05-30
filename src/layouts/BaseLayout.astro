@@ -7,9 +7,9 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-const pageTitle = title.includes('O Direito de Entender')
+const pageTitle = title.includes('Leitura do Mundo')
   ? title
-  : `${title} | O Direito de Entender`;
+  : `${title} | Leitura do Mundo`;
 ---
 
 <!doctype html>
@@ -24,7 +24,7 @@ const pageTitle = title.includes('O Direito de Entender')
     <header class="site-header">
       <div class="site-header__inner">
         <p class="site-title">
-          <a href="/">O Direito de Entender</a>
+          <a href="/">Leitura do Mundo</a>
         </p>
         <nav aria-label="Principal">
           <ul class="site-nav">

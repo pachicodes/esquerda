@@ -1,6 +1,6 @@
 # Ambiente e Validação — Fase 0
 
-Este documento registra o estado do ambiente de desenvolvimento e a estratégia de validação adotada para o projeto **O Direito de Entender**.
+Este documento registra o estado do ambiente de desenvolvimento e a estratégia de validação adotada para o projeto **Leitura do Mundo**.
 
 ## Verificação realizada em 2026-05-30
 

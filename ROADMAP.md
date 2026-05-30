@@ -1,10 +1,10 @@
-# Roadmap de Execução — O Direito de Entender
+# Roadmap de Execução — Leitura do Mundo
 
 Este documento é a referência principal para executar o projeto. Ele registra a ordem de desenvolvimento, os critérios de aceite, os testes possíveis, os riscos conhecidos e o que fica fora do escopo da primeira versão.
 
 ## Objetivo do Projeto
 
-Criar um blog estático em Astro chamado **O Direito de Entender**, com posts em Markdown, visual minimalista e manutenção simples para uma pessoa que quer escrever sem lidar com complexidade técnica desnecessária.
+Criar um blog estático em Astro chamado **Leitura do Mundo**, com posts em Markdown, visual minimalista e manutenção simples para uma pessoa que quer escrever sem lidar com complexidade técnica desnecessária.
 
 O projeto deve evitar backend, banco de dados, autenticação, CMS obrigatório, painel administrativo, React e dependências desnecessárias.
 
@@ -212,7 +212,7 @@ Criar a base visual e estrutural reutilizável do blog.
 
 - **Arquivos criados:** `src/layouts/BaseLayout.astro`, `src/styles/global.css`.
 - **Arquivo alterado:** `src/pages/index.astro` (passa a usar `BaseLayout`).
-- **Layout:** `header`, `nav`, `main`, `footer`; SEO com props `title` e `description`; padrão de título `Título | O Direito de Entender`.
+- **Layout:** `header`, `nav`, `main`, `footer`; SEO com props `title` e `description`; padrão de título `Título | Leitura do Mundo`.
 - **Estilo:** fundo claro, `--measure: 68ch`, `line-height: 1.7`, verde abacate e roxo suave nos links/hover, foco visível.
 - **Validação npm:** não executada — `npm` indisponível. Revisão manual de HTML/CSS concluída.
 - **Validação pendente:** `npm run dev` e checagem visual no navegador após instalar Node.js 18+.
@@ -314,7 +314,7 @@ Criar a leitura completa de cada ensaio em página própria.
 - O corpo Markdown é renderizado corretamente.
 - A página tem boa legibilidade.
 - A página usa SEO básico com título e descrição do post.
-- O título da página segue o padrão `Título do post | O Direito de Entender`.
+- O título da página segue o padrão `Título do post | Leitura do Mundo`.
 - Posts com `published: false` não geram página pública.
 
 ### Validação
@@ -363,7 +363,7 @@ Criar uma página institucional simples e fácil de editar depois.
 
 - **Arquivos criados:** `src/pages/sobre.astro`.
 - **Conteúdo:** apresentação provisória do blog (propósito, público, seções editoriais); nota explícita de texto provisório; sem dados pessoais definitivos da autora.
-- **Layout:** `BaseLayout` com SEO (`Sobre | O Direito de Entender`); reutiliza `.home-intro` e `.post-back`.
+- **Layout:** `BaseLayout` com SEO (`Sobre | Leitura do Mundo`); reutiliza `.home-intro` e `.post-back`.
 - **Navegação:** menu (`/sobre`) e link na home já existiam; rota `/sobre` passa a responder.
 - **Validação npm:** não executada — `npm` indisponível. Revisão manual concluída.
 - **Validação pendente:** `npm run dev` e abrir `/sobre` no navegador.

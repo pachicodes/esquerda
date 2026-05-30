@@ -6,7 +6,7 @@ import CategoryFilter from '../components/CategoryFilter.astro';
 
 const title = 'Todos os textos';
 const description =
-  'Todos os textos publicados em O Direito de Entender, com filtro por categoria.';
+  'Todos os textos publicados em Leitura do Mundo, com filtro por categoria.';
 
 const posts = (await getCollection('posts', ({ data }) => data.published)).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()

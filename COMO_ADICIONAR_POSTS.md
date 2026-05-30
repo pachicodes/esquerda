@@ -1,6 +1,6 @@
 # Como adicionar posts
 
-Este guia explica como publicar e editar textos no blog **O Direito de Entender** usando arquivos Markdown. Não é preciso saber programar — basta saber criar e salvar arquivos de texto na pasta certa.
+Este guia explica como publicar e editar textos no blog **Leitura do Mundo** usando arquivos Markdown. Não é preciso saber programar — basta saber criar e salvar arquivos de texto na pasta certa.
 
 ## O que você precisa instalar
 

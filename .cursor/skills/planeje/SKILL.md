@@ -95,7 +95,7 @@ Fluxo recomendado: **`/analise` (opcional) → `/planeje` → aprovação → `/
 
 ## Referências fixas do projeto
 
-- Blog: **O Direito de Entender**
+- Blog: **Leitura do Mundo**
 - Stack: Astro 5, Markdown, Content Collections, CSS simples
 - Posts: exclusivamente em `src/content/posts/`
 - Sem React, CMS, backend ou dependências desnecessárias

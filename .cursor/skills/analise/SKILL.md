@@ -91,7 +91,7 @@ Fluxo recomendado: **`/analise` → confirmação do usuário → `/revise`**.
 
 ## Referências fixas do projeto
 
-- Blog: **O Direito de Entender**
+- Blog: **Leitura do Mundo**
 - Stack: Astro 5, Markdown, Content Collections, CSS simples, sem React/CMS/backend
 - Posts: exclusivamente em `src/content/posts/`
 - Documentação de execução: [ROADMAP.md](ROADMAP.md)

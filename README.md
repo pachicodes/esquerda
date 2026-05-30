@@ -1,4 +1,4 @@
-# O Direito de Entender
+# Leitura do Mundo
 
 Blog estático em Astro 5 com posts em Markdown.
 
