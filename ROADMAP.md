@@ -456,6 +456,18 @@ npm run preview
 
 - Se `npm` não estiver disponível, registrar que a validação completa depende da instalação do Node.js 18+ e fazer revisão manual dos arquivos.
 
+### Status: concluída (2026-05-30)
+
+- **Tipo de entrega:** auditoria final da primeira versão (sem novas features).
+- **Estrutura:** todos os arquivos das fases 1–8 presentes (`package.json`, configs, `src/` completo, documentação).
+- **Escopo v1:** `package.json` contém apenas `astro`; sem React, backend, CMS, banco ou autenticação no código.
+- **Posts:** 3 publicados em `src/content/posts/` (`published: true`). Filtro `data.published` em `index.astro` e `posts/[...slug].astro`.
+- **Rascunhos:** comportamento de `published: false` validado por leitura do código (nenhum post rascunho no repositório).
+- **Definição de Pronto:** atendida na revisão manual; confirmação por build pendente de Node.js/npm.
+- **Fora do escopo:** busca, paginação, comentários, newsletter, analytics, dark mode, tags e canonical não implementados.
+- **Validação npm:** não executada — `npm` indisponível. Pendente: `npm install`, `npm run build`, `npm run preview`.
+- **Roadmap v1:** todas as fases 0–9 concluídas.
+
 ## Definição de Pronto
 
 O projeto estará pronto quando:

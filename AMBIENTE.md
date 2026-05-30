@@ -45,6 +45,10 @@ npm run preview
 
 Se `node --version` retornar uma versão (por exemplo `v22.x`), isso **não** significa que o ambiente está pronto para desenvolvimento. Verifique se `npm --version` também funciona antes de considerar o ambiente completo.
 
+## Verificação final (Fase 9 — 2026-05-30)
+
+A auditoria da primeira versão foi concluída com **revisão manual**. O projeto está estruturalmente pronto para deploy estático; a confirmação automática (`npm install`, `npm run build`) depende de instalar Node.js 18+ com npm no PATH.
+
 ## Próximo passo
 
-Iniciar a **Fase 1 — Base Mínima do Projeto Astro**, criando os arquivos manualmente (sem `npm create astro`). Ver [FASE-1-PREPARACAO.md](FASE-1-PREPARACAO.md).
+Instalar Node.js, rodar `npm install` e `npm run build` na pasta do projeto e publicar conforme [COMO_ADICIONAR_POSTS.md](COMO_ADICIONAR_POSTS.md).
