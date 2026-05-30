@@ -2,17 +2,17 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PostCard from '../components/PostCard.astro';
-import CategoryFilter from '../components/CategoryFilter.astro';
 
 const title = 'O Direito de Entender';
 const description =
-  'Ensaios sobre poder, linguagem, política e tecnologia para quem cansou de ser deixada do lado de fora da conversa.';
+  'Textos sobre poder, linguagem, política e tecnologia para quem cansou de ser deixada do lado de fora da conversa.';
 const tagline =
-  'Ensaios sobre poder, linguagem, política e tecnologia para quem cansou de ser deixada do lado de fora da conversa.';
+  'Textos sobre poder, linguagem, política e tecnologia para quem cansou de ser deixada do lado de fora da conversa.';
 
 const posts = (await getCollection('posts', ({ data }) => data.published)).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
+const recentPosts = posts.slice(0, 5);
 ---
 
 <BaseLayout title={title} description={description}>
@@ -30,13 +30,12 @@ const posts = (await getCollection('posts', ({ data }) => data.published)).sort(
   </header>
 
   <section class="home-posts" aria-labelledby="posts-heading">
-    <h2 id="posts-heading">Ensaios recentes</h2>
-    {posts.length > 0 && <CategoryFilter />}
-    {posts.length === 0 ? (
-      <p class="prose-muted">Nenhum ensaio publicado ainda.</p>
+    <h2 id="posts-heading">Últimos textos</h2>
+    {recentPosts.length === 0 ? (
+      <p class="prose-muted">Nenhum texto publicado ainda.</p>
     ) : (
       <ul class="post-list">
-        {posts.map((post) => (
+        {recentPosts.map((post) => (
           <li data-category={post.data.category}>
             <PostCard
               title={post.data.title}
@@ -49,6 +48,11 @@ const posts = (await getCollection('posts', ({ data }) => data.published)).sort(
           </li>
         ))}
       </ul>
+    )}
+    {posts.length > 0 && (
+      <p class="home-posts__more">
+        <a href="/textos">Ver todos os textos</a>
+      </p>
     )}
   </section>
 </BaseLayout>

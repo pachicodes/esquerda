@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import CategoryFilter from '../components/CategoryFilter.astro';
+
+const title = 'Todos os textos';
+const description =
+  'Todos os textos publicados em O Direito de Entender, com filtro por categoria.';
+
+const posts = (await getCollection('posts', ({ data }) => data.published)).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<BaseLayout title={title} description={description}>
+  <header class="home-intro">
+    <h1>{title}</h1>
+    <p class="home-tagline">
+      Leia os textos publicados e filtre por tema quando quiser encontrar um
+      assunto específico.
+    </p>
+  </header>
+
+  <section class="home-posts" aria-labelledby="texts-heading">
+    <h2 id="texts-heading">Arquivo de textos</h2>
+    {posts.length > 0 && <CategoryFilter />}
+    {posts.length === 0 ? (
+      <p class="prose-muted">Nenhum texto publicado ainda.</p>
+    ) : (
+      <ul class="post-list">
+        {posts.map((post) => (
+          <li data-category={post.data.category}>
+            <PostCard
+              title={post.data.title}
+              href={`/posts/${post.id}`}
+              date={post.data.date}
+              category={post.data.category}
+              description={post.data.description}
+              readingTime={post.data.readingTime}
+            />
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+</BaseLayout>

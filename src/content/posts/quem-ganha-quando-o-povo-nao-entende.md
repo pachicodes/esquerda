@@ -9,4 +9,4 @@ published: true
 
 Este é um texto de exemplo para testar o layout do blog. O conteúdo definitivo será escrito depois.
 
-A ideia central deste ensaio é explorar quem se beneficia quando decisões públicas são explicadas em uma linguagem que exclui a maioria das pessoas.
+A ideia central deste texto é explorar quem se beneficia quando decisões públicas são explicadas em uma linguagem que exclui a maioria das pessoas.

@@ -181,6 +181,11 @@ p {
   border-top: 1px solid var(--color-border);
 }
 
+.home-posts__more {
+  margin-top: var(--space-md);
+  font-size: 0.9375rem;
+}
+
 .post-card {
   padding: var(--space-md) 0;
 }
