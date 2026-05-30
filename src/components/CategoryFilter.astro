@@ -1,0 +1,65 @@
+---
+const categories = [
+  'Direito de Entender',
+  'Linguagem do Poder',
+  'Tecnologia não é Neutra',
+  'Esquerda para Gente Cansada',
+  'Vida Cotidiana e Política',
+] as const;
+---
+
+<nav class="category-filter" aria-label="Filtrar por categoria">
+  <ul class="category-filter__list">
+    <li>
+      <button
+        type="button"
+        class="category-filter__btn is-active"
+        data-filter-btn
+        data-filter="all"
+        aria-pressed="true"
+      >
+        Todas
+      </button>
+    </li>
+    {
+      categories.map((category) => (
+        <li>
+          <button
+            type="button"
+            class="category-filter__btn"
+            data-filter-btn
+            data-filter={category}
+            aria-pressed="false"
+          >
+            {category}
+          </button>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<script is:inline>
+  function setActiveButton(activeBtn) {
+    document.querySelectorAll('[data-filter-btn]').forEach((btn) => {
+      const isActive = btn === activeBtn;
+      btn.classList.toggle('is-active', isActive);
+      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+  }
+
+  function applyFilter(filter) {
+    document.querySelectorAll('.post-list > li').forEach((item) => {
+      const category = item.dataset.category;
+      const show = filter === 'all' || category === filter;
+      item.hidden = !show;
+    });
+  }
+
+  document.querySelectorAll('[data-filter-btn]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      applyFilter(btn.dataset.filter);
+      setActiveButton(btn);
+    });
+  });
+</script>

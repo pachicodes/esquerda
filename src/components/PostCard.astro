@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+  href: string;
+  date: Date;
+  category: string;
+  description: string;
+  readingTime: string;
+}
+
+const { title, href, date, category, description, readingTime } = Astro.props;
+
+const dateFormatted = date.toLocaleDateString('pt-BR', { dateStyle: 'long' });
+const dateIso = date.toISOString().slice(0, 10);
+---
+
+<article class="post-card">
+  <h3 class="post-card__title">
+    <a href={href}>{title}</a>
+  </h3>
+  <p class="post-card__meta">
+    <time datetime={dateIso}>{dateFormatted}</time>
+    <span class="post-card__separator" aria-hidden="true">·</span>
+    <span class="post-card__category">{category}</span>
+    <span class="post-card__separator" aria-hidden="true">·</span>
+    <span>{readingTime}</span>
+  </p>
+  <p class="post-card__description">{description}</p>
+</article>

@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const pageTitle = title.includes('O Direito de Entender')
+  ? title
+  : `${title} | O Direito de Entender`;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <p class="site-title">
+          <a href="/">O Direito de Entender</a>
+        </p>
+        <nav aria-label="Principal">
+          <ul class="site-nav">
+            <li><a href="/">Início</a></li>
+            <li><a href="/sobre">Sobre</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main" id="conteudo-principal">
+      <div class="site-main__inner">
+        <slot />
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>Ensaios sobre poder, linguagem, política e tecnologia.</p>
+      </div>
+    </footer>
+  </body>
+</html>

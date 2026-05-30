@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import CategoryFilter from '../components/CategoryFilter.astro';
+
+const title = 'O Direito de Entender';
+const description =
+  'Ensaios sobre poder, linguagem, política e tecnologia para quem cansou de ser deixada do lado de fora da conversa.';
+const tagline =
+  'Ensaios sobre poder, linguagem, política e tecnologia para quem cansou de ser deixada do lado de fora da conversa.';
+
+const posts = (await getCollection('posts', ({ data }) => data.published)).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<BaseLayout title={title} description={description}>
+  <header class="home-intro">
+    <h1>{title}</h1>
+    <p class="home-tagline">{tagline}</p>
+    <p>
+      Este blog reúne textos para quem quer entender o mundo sem depender de
+      linguagem acadêmica, jurídica ou tecnocrática. Aqui, poder, política e
+      tecnologia são explicados com clareza e sem condescendência.
+    </p>
+    <p>
+      <a href="/sobre">Sobre o blog</a>
+    </p>
+  </header>
+
+  <section class="home-posts" aria-labelledby="posts-heading">
+    <h2 id="posts-heading">Ensaios recentes</h2>
+    {posts.length > 0 && <CategoryFilter />}
+    {posts.length === 0 ? (
+      <p class="prose-muted">Nenhum ensaio publicado ainda.</p>
+    ) : (
+      <ul class="post-list">
+        {posts.map((post) => (
+          <li data-category={post.data.category}>
+            <PostCard
+              title={post.data.title}
+              href={`/posts/${post.id}`}
+              date={post.data.date}
+              category={post.data.category}
+              description={post.data.description}
+              readingTime={post.data.readingTime}
+            />
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+</BaseLayout>
