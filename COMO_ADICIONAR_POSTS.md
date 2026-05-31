@@ -141,11 +141,13 @@ O blog é um site estático. Você publica enviando alterações para o reposit�
 | Pasta de saída | `dist` |
 | Framework / preset | **Astro** (muitas vezes detectado automaticamente) |
 
-### GitHub Pages (repositório `pachicodes/esquerda`)
+### GitHub Pages (repositório `pachicodes/Leitura-do-Mundo`)
 
 Este projeto já inclui o workflow `.github/workflows/deploy.yml`. Ele roda `npm ci`, `npm run build` e publica a pasta `dist`.
 
-**URL do site:** [https://pachicodes.github.io/esquerda/](https://pachicodes.github.io/esquerda/)
+**URL do site:** [https://pachicodes.github.io/Leitura-do-Mundo/](https://pachicodes.github.io/Leitura-do-Mundo/)
+
+O `base` em `astro.config.mjs` deve ser `/Leitura-do-Mundo/` (igual ao nome do repositório no GitHub).
 
 **Configuração no GitHub (uma vez):**
 
@@ -163,7 +165,7 @@ npm run build
 npm run preview
 ```
 
-Abra no navegador o endereço que o terminal mostrar (inclui `/esquerda/` no caminho).
+Abra no navegador o endereço que o terminal mostrar (inclui `/Leitura-do-Mundo/` no caminho).
 
 ### Vercel ou Netlify (alternativa)
 
@@ -194,7 +196,7 @@ Abra no navegador o endereço que o terminal mostrar (inclui `/esquerda/` no cam
 | Título quebrado no frontmatter | Aspas faltando | Coloque o título entre aspas: `title: "Meu título"` |
 | Alteração não aparece no navegador | Cache ou servidor antigo | Salve o arquivo, reinicie `npm run dev` se necessário, atualize a página com Ctrl+F5 |
 | GitHub Pages com erro de Jekyll | Source em “Deploy from a branch” | Troque para **GitHub Actions** em Settings → Pages |
-| Site no ar sem CSS / links quebrados | GitHub ignora pastas com `_` (ex.: `_astro`) | O projeto usa `build.assets: 'assets'` e `.nojekyll` no `dist`; confira `base: '/esquerda/'` em `astro.config.mjs` |
+| Site no ar sem CSS / links quebrados | `base` diferente do nome do repositório ou pasta `_astro` | `base` deve ser `/Nome-do-repositorio/`; este projeto usa `build.assets: 'assets'` e `.nojekyll` |
 | Workflow falha no `npm ci` | Falta `package-lock.json` no repositório | Rode `npm install` localmente e commite o `package-lock.json` |
 
 ## Editar ou remover um post

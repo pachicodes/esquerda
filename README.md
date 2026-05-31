@@ -40,7 +40,7 @@ Os posts ficam em `src/content/posts/` (um arquivo `.md` por texto).
 
 O site pode ser publicado no **GitHub Pages** (recomendado para este repositório) ou em **Vercel** / **Netlify**.
 
-**GitHub Pages:** o workflow em `.github/workflows/deploy.yml` publica automaticamente a cada push na branch `main`. URL do site: [https://pachicodes.github.io/esquerda/](https://pachicodes.github.io/esquerda/). Em **Settings → Pages**, a origem deve ser **GitHub Actions** (não “Deploy from a branch”).
+**GitHub Pages:** o workflow em `.github/workflows/deploy.yml` publica automaticamente a cada push na branch `main`. URL do site: [https://pachicodes.github.io/Leitura-do-Mundo/](https://pachicodes.github.io/Leitura-do-Mundo/). Em **Settings → Pages**, a origem deve ser **GitHub Actions** (não “Deploy from a branch”).
 
 Passo a passo completo (GitHub Pages, Vercel e Netlify) em [COMO_ADICIONAR_POSTS.md](COMO_ADICIONAR_POSTS.md).
 
