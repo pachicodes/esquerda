@@ -194,7 +194,7 @@ Abra no navegador o endereço que o terminal mostrar (inclui `/esquerda/` no cam
 | Título quebrado no frontmatter | Aspas faltando | Coloque o título entre aspas: `title: "Meu título"` |
 | Alteração não aparece no navegador | Cache ou servidor antigo | Salve o arquivo, reinicie `npm run dev` se necessário, atualize a página com Ctrl+F5 |
 | GitHub Pages com erro de Jekyll | Source em “Deploy from a branch” | Troque para **GitHub Actions** em Settings → Pages |
-| Site no ar sem CSS / links quebrados | `base` incorreto no Astro ou pasta `_astro` ignorada | Mantenha `base: '/esquerda/'` em `astro.config.mjs`; o arquivo `public/.nojekyll` evita que o GitHub ignore pastas com `_` |
+| Site no ar sem CSS / links quebrados | GitHub ignora pastas com `_` (ex.: `_astro`) | O projeto usa `build.assets: 'assets'` e `.nojekyll` no `dist`; confira `base: '/esquerda/'` em `astro.config.mjs` |
 | Workflow falha no `npm ci` | Falta `package-lock.json` no repositório | Rode `npm install` localmente e commite o `package-lock.json` |
 
 ## Editar ou remover um post

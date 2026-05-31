@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node --input-type=module -e \"import { writeFileSync } from 'node:fs'; writeFileSync('dist/.nojekyll', '');\"",
     "preview": "astro preview"
   },
   "dependencies": {
