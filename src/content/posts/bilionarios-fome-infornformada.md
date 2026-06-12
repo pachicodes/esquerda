@@ -18,3 +18,7 @@ Uma quantia assim não pode ser gasta por uma única pessoa em uma vida. **Mas p
 Mas eles não dão a mínima pra gente como seres humanos.
 
 Você entende que Elon Musk poderia acabar com a miséria no mundo, e ainda assim ele seria um bilionário?
+
+Por essa e por outras, nunca vou entender como uma pessoa pobre consegue defender ele, e qualquer outro bilionário. 
+
+Esses tempos atrás a cantora Billie Eilish doou uma boa parte da sua fortuna pra organizações que combatem a fome, promovem justiça climática e apoiam causas ambientais, e ainda perguntou para outros milionários porque eles não fazem o mesmo, e aos bilionários **por que** eles são bilionários.

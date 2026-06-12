@@ -141,13 +141,13 @@ O blog é um site estático. Você publica enviando alterações para o reposit�
 | Pasta de saída | `dist` |
 | Framework / preset | **Astro** (muitas vezes detectado automaticamente) |
 
-### GitHub Pages (repositório `pachicodes/Leitura-do-Mundo`)
+### GitHub Pages (repositório `pachicodes/Leitora-do-Mundo`)
 
 Este projeto já inclui o workflow `.github/workflows/deploy.yml`. Ele roda `npm ci`, `npm run build` e publica a pasta `dist`.
 
-**URL do site:** [https://pachicodes.github.io/Leitura-do-Mundo/](https://pachicodes.github.io/Leitura-do-Mundo/)
+**URL do site:** [https://pachicodes.github.io/Leitora-do-Mundo/](https://pachicodes.github.io/Leitora-do-Mundo/)
 
-O `base` em `astro.config.mjs` deve ser `/Leitura-do-Mundo/` (igual ao nome do repositório no GitHub).
+O `base` em `astro.config.mjs` deve ser `/Leitora-do-Mundo/` (igual ao slug do repositório no GitHub: espaços viram hífens).
 
 **Configuração no GitHub (uma vez):**
 
@@ -165,7 +165,7 @@ npm run build
 npm run preview
 ```
 
-Abra no navegador o endereço que o terminal mostrar (inclui `/Leitura-do-Mundo/` no caminho).
+Abra no navegador o endereço que o terminal mostrar (inclui `/Leitora-do-Mundo/` no caminho).
 
 ### Vercel ou Netlify (alternativa)
 

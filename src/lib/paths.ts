@@ -1,4 +1,4 @@
-/** Prefixa caminhos internos com `base` do Astro (ex.: `/Leitura-do-Mundo/` no GitHub Pages). */
+/** Prefixa caminhos internos com `base` do Astro (ex.: `/Leitora-do-Mundo/` no GitHub Pages). */
 export function withBase(path = ''): string {
   const base = import.meta.env.BASE_URL;
   if (!path || path === '/') return base;
