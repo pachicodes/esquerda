@@ -15,10 +15,13 @@ A maioria dos outros bilionários tem a maior parte de sua fortuna em ações e 
 
 Uma quantia assim não pode ser gasta por uma única pessoa em uma vida. **Mas poderia ajudar a vida de milhares de pessoas**. O que me faz concluir que uma regra pra ser bilionário é não dar a mínima para a humanidade, para o próximo. Para a sociedade que é, de certa forma, a fonte de sua riqueza. Porque **ninguém** consegue se tornar bilionário sem explorar o trabalho de outras pessoas e sem vender algum bem ou serviço. Logo, pra se tornar bilionário, eles precisam de nós. Sim, meu amigo, minha amiga… De mim e de você.
 
-Mas eles não dão a mínima pra gente como seres humanos.
+**Mas eles não dão a mínima pra gente como seres humanos. Eles nem vêem a gente como gente, apenas como números**
 
 Você entende que Elon Musk poderia acabar com a miséria no mundo, e ainda assim ele seria um bilionário?
 
 Por essa e por outras, nunca vou entender como uma pessoa pobre consegue defender ele, e qualquer outro bilionário. 
 
-Esses tempos atrás a cantora Billie Eilish doou uma boa parte da sua fortuna pra organizações que combatem a fome, promovem justiça climática e apoiam causas ambientais, e ainda perguntou para outros milionários porque eles não fazem o mesmo, e aos bilionários **por que** eles são bilionários.
+Esses tempos atrás a cantora Billie Eilish doou uma boa parte da sua fortuna pra organizações que combatem a fome, promovem justiça climática e apoiam causas ambientais, e ainda perguntou para outros milionários porque eles não fazem o mesmo, e aos bilionários **por que** eles são bilionários. Ela é uma jovem de 20 e tantos anos e já entendeu que ela não precisa de tanto dinheiro, mas tem muita gente pelo mundo afora que precisa, mostrando que não faz sentindo uma única pessoa ter tanto dinheiro.
+
+Sim, eu sou a mulher inconformada. Mas você também deveria ser leitora... Leitor. Deveriamos ser pessoas inconformadas, eu, você e todos ao nosso redor. Talvez nossa inconformidade não possa mudar o mundo imediatamente, mas começar a questionar como as coisas funcionam, e a reclamar mais e publicamente disso pode sim, plantat a semente da mudança, que provavelmente eu não vou ver nessa vida, mas eu queria muito que a minha fiha visse na vida dela.
+
