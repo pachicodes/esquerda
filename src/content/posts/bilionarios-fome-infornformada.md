@@ -9,15 +9,15 @@ published: true
 
 
 Tenho estudado uma váriedade de tópicos, tal é a vida de uma pessoa neurodivergente (eu tenho TDAH). 
-Astrologia, teoria da crítica social, Inteligência Artificial(IA)... E hoje, a minha inconformidade não veio diretamente dos estudos sociais, e sim de uma *newsletter* sobre IA: Elon Musk é agora a pessoa mais rica da história, com um bilhão de dolares em patrimônio **liquido**. Quer dizer que ele tem esse dinheiro na conta dele, e pode até fazer um pix nesse valor.
+Astrologia, teoria da crítica social, Inteligência Artificial(IA)... E hoje, a minha inconformidade não veio diretamente dos estudos sociais, e sim de uma *newsletter* sobre IA: Elon Musk é agora a pessoa mais rica da história, se tornando o primeiro trilionário de todos os tempos.
 
-A maioria dos outros bilionários tem a maior parte de sua fortuna em ações e bens, não que isso mude muita coisa. Mas não há nada que não possa ser comprado com um bilhão de dólares. Isso é uma quantia que nós, meros mortais, não conseguimos nem imaginar. Querida pessoa leitora, **$1.000.000.000**. Isso são muitos zeros.
+Antes de seguir, vale parar nesse número. **Um trilhão são mil bilhões**, e mesmo um único bilhão já é uma quantia que nós, meros mortais, não conseguimos nem imaginar. Querida pessoa leitora, **$1.000.000.000**. Isso são muitos zeros, e  o Musk não tem um, tem mil vezes isso.
 
-Uma quantia assim não pode ser gasta por uma única pessoa em uma vida. **Mas poderia ajudar a vida de milhares de pessoas**. O que me faz concluir que uma regra pra ser bilionário é não dar a mínima para a humanidade, para o próximo. Para a sociedade que é, de certa forma, a fonte de sua riqueza. Porque **ninguém** consegue se tornar bilionário sem explorar o trabalho de outras pessoas e sem vender algum bem ou serviço. Logo, pra se tornar bilionário, eles precisam de nós. Sim, meu amigo, minha amiga… De mim e de você.
+Se um bilhão já é uma quantia que não pode ser gasta por uma única pessoa em uma vida, imagine um trilhão?. Sabeo que ele poderia fazer com isso? **Acabar com a fome no mundo todo**. O que me faz concluir que uma regra pra ser bilionário é não dar a mínima para a humanidade, para o próximo. Para a sociedade que é, de certa forma, a fonte de sua riqueza. Porque **ninguém** consegue se tornar bilionário sem explorar o trabalho de outras pessoas e sem vender algum bem ou serviço. Logo, pra se tornar bilionário, eles precisam de nós. Sim, meu amigo, minha amiga… De mim e de você.
 
 **Mas eles não dão a mínima pra gente como seres humanos. Eles nem vêem a gente como gente, apenas como números**
 
-Você entende que Elon Musk poderia acabar com a miséria no mundo, e ainda assim ele seria um bilionário?
+Você entende que Elon Musk poderia acabar com a miséria no mundo, e ainda assim ele seria um trilionário?
 
 Por essa e por outras, nunca vou entender como uma pessoa pobre consegue defender ele, e qualquer outro bilionário. 
 
